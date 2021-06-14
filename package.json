@@ -12,7 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fastify": "^3.17.0"
+    "fastify": "^3.17.0",
+    "fastify-mongodb": "^2.0.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
