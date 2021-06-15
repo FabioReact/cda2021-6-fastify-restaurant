@@ -29,12 +29,13 @@ fastify.get('/me', async () => {
 
 // GET /courses -> Renvoie tout les plats
 fastify.get('/courses', async () => {
-  return db.courses
+  const collection = fastify.mongo.db.collection('courses')
+  const result = await collection.find().toArray()
+  return result
 })
 
 // POST /courses -> Ajout d'un nouveau plat
 fastify.post('/courses', async (request, reply) => {
-  console.log(request.body)
   /**
    * Grâce à fastify-mongodb, on a acces à notre BDD via fastify.mongo.db
    * Cependant, il faut aussi préciser à quellle collection on souhaite avoir acces via fastify.mongo.db.collection('nom-de-la-collection')
@@ -49,8 +50,12 @@ fastify.post('/courses', async (request, reply) => {
   return result
 })
 
-// API REST
 // GET /courses/id -> Renvoie le plat ayant l'id passé dans l'url
+fastify.get('/courses/:id', async (request, reply) => {
+  const id = request.params.id
+})
+
+// API REST
 // PUT /courses/id -> Modifie le plat (en écrasant toutes les données) ayant l'id passé dans l'url
 // PATCH /courses/id -> Modifie le plat (écrase SEULEMENT les données spécifiés) ayant l'id passé dans l'url
 // DELETE /courses/id -> Supprime le plat ayant l'id passé dans l'url
