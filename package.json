@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "argon2": "^0.28.2",
     "fastify": "^3.17.0",
     "fastify-mongodb": "^2.0.1"
   },

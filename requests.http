@@ -11,15 +11,59 @@ Content-Type: application/json
 GET http://localhost:4000/courses
 
 ###
-GET http://localhost:4000/courses/60c76459b0bfed589cc64c06
+GET http://localhost:4000/courses/id
 
 ###
-DELETE http://localhost:4000/courses/60c76cd1b614df0fa4d0f337
+DELETE http://localhost:4000/courses/id
 
 ###
-PATCH http://localhost:4000/courses/60c86eb283e41b339ce1d366
+PATCH http://localhost:4000/courses/id
 Content-Type: application/json
 
 {
 	"price": 2550
+}
+
+###
+# GET USERS
+GET http://localhost:4000/users
+
+###
+# GET USER By id
+GET http://localhost:4000/users/60c8b7b0364fab3b08c0f82c
+
+
+###
+# POST USERS
+POST http://localhost:4000/users
+Content-Type: application/json
+
+{
+	"username": "yacine",
+	"email": "yacine@email.com",
+	"password": "yacine"
+}
+
+
+###
+# PATCH USER
+PATCH http://localhost:4000/users/60c8bd67aaf4e22de8449145
+Content-Type: application/json
+
+{
+	"password": "qwerty"
+}
+
+###
+# DELETE USER
+DELETE http://localhost:4000/users/60c8b7b0364fab3b08c0f82c
+
+###
+# Login
+POST http://localhost:4000/login
+Content-Type: application/json
+
+{
+	"email": "yacine@email.com",
+	"password": "toto"
 }
